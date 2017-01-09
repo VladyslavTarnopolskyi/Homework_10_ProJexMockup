@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans/DroidSans.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans/DroidSans-Bold.ttf") format("truetype"), url("../fonts/DroidSans/DroidSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Quick Sand";
+  src: url("../fonts/Quicksand/Quicksand-Bold.otf") format("opentype"), url("../fonts/Quicksand/Quicksand-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Quick Sand";
+  src: url("../fonts/Quicksand/Quicksand-Light.otf") format("opentype"), url("../fonts/Quicksand/Quicksand-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Quick Sand";
+  src: url("../fonts/Quicksand/Quicksand-Regular.otf") format("opentype"), url("../fonts/Quicksand/Quicksand-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
