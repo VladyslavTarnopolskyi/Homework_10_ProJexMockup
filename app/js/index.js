@@ -1,38 +1,38 @@
 window.addEventListener('load', function() {
-    var newsWrapper,
+    let newsWrapper,
         divItems,
         imageNumber,
         imageWidth,
-        prev, next;
-    var currentPosition = 0;
-    var currentImage = 0;
+        prev,
+        next;
+    let currentPosition = 0;
+    let currentImage = 0;
 
     function init() {
         newsWrapper = document.getElementById('image_slider');
         divItems = newsWrapper.children;
         imageNumber = divItems.length;
         imageWidth = divItems[0].offsetWidth;
-        newsWrapper.style.width = parseInt(imageWidth * imageNumber) + 'px';
+        newsWrapper.style.width = `${parseInt(imageWidth * imageNumber)}px`;
         prev = document.getElementById("prev");
         next = document.getElementById("next");
         generateDots(imageNumber);
-        prev.onclick = function () {
+        prev.onclick = () => {
             onClickPrev();
         };
-        next.onclick = function () {
+        next.onclick = () => {
             onClickNext();
         };
     }
-
     function animate(opts) {
-        var start = new Date;
-        var id = setInterval(function () {
-            var timePassed = new Date - start;
-            var progress = timePassed / opts.duration;
+        let start = new Date;
+        let id = setInterval(() => {
+            let timePassed = new Date - start;
+            let progress = timePassed / opts.duration;
             if (progress > 1) {
                 progress = 1;
             }
-            var delta = opts.delta(progress);
+            let delta = opts.delta(progress);
             opts.step(delta);
             if (progress == 1) {
                 clearInterval(id);
@@ -42,27 +42,27 @@ window.addEventListener('load', function() {
     }
 
     function slideTo(imageToGo) {
-        var direction;
-        var numOfImageToGo = Math.abs(imageToGo - currentImage);
+        let direction;
+        let numOfImageToGo = Math.abs(imageToGo - currentImage);
         direction = currentImage > imageToGo ? 1 : -1;
         currentPosition = -1 * currentImage * imageWidth;
-        var opts = {
+        let opts = {
             duration: 500,
-            delta: function (p) {
+            delta(p) {
                 return p;
             },
-            step: function (delta) {
-                newsWrapper.style.left = parseInt(currentPosition + direction * delta * imageWidth * numOfImageToGo) + 'px';
+            step(delta) {
+                newsWrapper.style.left = `${parseInt(currentPosition + direction * delta * imageWidth * numOfImageToGo)}px`;
             },
-            callback: function () {
+            callback() {
                 currentImage = imageToGo;
             }
         };
         animate(opts);
     }
     function activeDot(q) {
-        var remLi = document.getElementsByClassName('dot');
-        for(var j = 0; j < imageNumber/3; j++){
+        let remLi = document.getElementsByClassName('dot');
+        for(let j = 0; j < imageNumber/3; j++){
             remLi[j].classList.remove('active');
         }
         remLi[q].classList.add('active');
@@ -90,22 +90,20 @@ window.addEventListener('load', function() {
     }
 
     function generateDots(imageNumber) {
-        var i;
-        var pagerDiv = document.getElementById('pager');
+        let i;
+        let pagerDiv = document.getElementById('pager');
         for (i = 0; i < imageNumber; i = i + 3) {
-            var li = document.createElement('li');
+            let li = document.createElement('li');
             li.className = "dot";
             pagerDiv.appendChild(li);
-            li.onclick = function (i) {
-                return function () {
-                    slideTo(i);
-                    var remLi = document.getElementsByClassName('dot');
-                    for(var j = 0; j < imageNumber/3; j++){
-                        remLi[j].classList.remove('active');
-                    }
-                    this.classList.add('active');
+            li.onclick = (i => function () {
+                slideTo(i);
+                let remLi = document.getElementsByClassName('dot');
+                for(let j = 0; j < imageNumber/3; j++){
+                    remLi[j].classList.remove('active');
                 }
-            }(i);
+                this.classList.add('active');
+            })(i);
         }
         pagerDiv.firstElementChild.classList.add('active');
     }

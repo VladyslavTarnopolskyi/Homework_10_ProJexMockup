@@ -6,7 +6,6 @@ var gulp = require('gulp'),
     source = require("vinyl-source-stream"),
     browserSync = require('browser-sync');
 
-
 gulp.task('default', ['less', 'browser-sync']);
 
 gulp.task('less', function () {
@@ -19,17 +18,6 @@ gulp.task('less', function () {
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
-// gulp.task("script", function () {
-//     return browserify({
-//         entries: ["./app/js/index.js"]
-//     })
-//         .transform(babelify.configure({
-//             presets: ["es2015"]
-//         }))
-//         .bundle()
-//         .pipe(source("bundle.js"))
-//         .pipe(gulp.dest("dist"));
-// });
 
 gulp.task('browser-sync', function () {
     browserSync({
