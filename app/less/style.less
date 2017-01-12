@@ -72,7 +72,7 @@ header{
 }
 /* --------------- end header style --------------- */
 /* --------------- slider style --------------- */
-.slider{
+#slider{
   background-color: #fff;
   height: 760px;
   .slider-info{
@@ -122,7 +122,7 @@ header{
 }
 /* --------------- end slider style --------------- */
 /* --------------- services style --------------- */
-.services{
+#services{
   background-color: @lightgray;
   h1{
     background: url(../img/services/hl.png) no-repeat center bottom;
@@ -150,7 +150,7 @@ header{
 }
 /* --------------- end services style --------------- */
 /* --------------- portfolio style --------------- */
-.portfolio{
+#portfolio{
   background-color: @red;
   height: 900px;
   h1{
@@ -164,13 +164,12 @@ header{
       position: relative;
       list-style-type: none;
       &:hover .hover{
-        display: block;
-
+        opacity: 1;
       }
     }
   }
   .hover{
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -181,6 +180,7 @@ header{
     font-weight: bold;
     font-size: 24px;
     color: white;
+    transition: 1.5s all;
     h3{
       margin-top: 120px;
     }
@@ -213,7 +213,7 @@ header{
 }
 /* --------------- end portfolio style --------------- */
 /* --------------- team style --------------- */
-.team{
+#team{
   height: 705px;
   background-color: @lightgray;
   h1 {
@@ -267,7 +267,7 @@ header{
 }
 /* --------------- end team style --------------- */
 /* --------------- news style --------------- */
-.news{
+#news{
   background-color: @red;
   height: 730px;
   h1{
@@ -283,7 +283,8 @@ header{
     margin-top: 60px;
     padding-right: 7px;
 
-    h3{
+    h3>a{
+      display: inline-block;
       font-size: 18px;
       font-weight: bold;
       padding: 15px 0 10px 0;
@@ -313,7 +314,7 @@ header{
 }
 /* --------------- end news style --------------- */
 /* --------------- contact style --------------- */
-.contact{
+#contact{
   background-color: @lightgray;
   height: 550px;
   h1{
@@ -481,7 +482,7 @@ footer{
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    &:hover {
+    &:hover, &.active{
       background-color: rgba(255, 255, 255, 0.8);
     }
   }

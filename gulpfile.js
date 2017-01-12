@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync');
 
 
+gulp.task('default', ['less', 'browser-sync']);
 
 gulp.task('less', function () {
     return gulp.src('app/less/**/*.less')
@@ -44,6 +45,7 @@ gulp.task('watch',['browser-sync', 'less'], function () {
    gulp.watch('app/*.html', browserSync.reload);
    gulp.watch('app/js/**/*.js', browserSync.reload);
 });
+
 gulp.task('build', function() {
 
     var buildHtml = gulp.src('app/*.html')

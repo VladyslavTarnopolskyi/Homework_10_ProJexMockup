@@ -212,30 +212,30 @@ header li a:hover {
 }
 /* --------------- end header style --------------- */
 /* --------------- slider style --------------- */
-.slider {
+#slider {
   background-color: #fff;
   height: 760px;
 }
-.slider .slider-info {
+#slider .slider-info {
   width: 600px;
   float: left;
   padding: 260px 35px 0 100px;
   text-align: left;
 }
-.slider .slider-info h2,
-.slider .slider-info span {
+#slider .slider-info h2,
+#slider .slider-info span {
   font-family: "Droid Sans", Arial, sans-serif;
   font-weight: bold;
   font-size: 72px;
 }
-.slider .slider-info span {
+#slider .slider-info span {
   font-size: 28px;
 }
-.slider .slider-info p {
+#slider .slider-info p {
   font-size: 13px;
   margin: 20px 0 20px 0;
 }
-.slider .slider-info a {
+#slider .slider-info a {
   display: inline-block;
   font-family: "Droid Sans", Arial, sans-serif;
   text-decoration: none;
@@ -251,29 +251,29 @@ header li a:hover {
   border-radius: 10px;
   border: 2px solid #ff5959;
 }
-.slider .slider-info a:hover {
+#slider .slider-info a:hover {
   background-color: rgba(255, 255, 255, 0);
 }
-.slider .mac-mock-up {
+#slider .mac-mock-up {
   width: 570px;
   float: right;
 }
-.slider .mac-mock-up img {
+#slider .mac-mock-up img {
   padding-top: 260px;
 }
 /* --------------- end slider style --------------- */
 /* --------------- services style --------------- */
-.services {
+#services {
   background-color: #e8e8e8;
 }
-.services h1 {
+#services h1 {
   background: url(../img/services/hl.png) no-repeat center bottom;
 }
-.services ul {
+#services ul {
   margin: 0;
   padding: 0;
 }
-.services li {
+#services li {
   display: inline-block;
   list-style-type: none;
   padding: 65px 15px 0 15px;
@@ -281,37 +281,37 @@ header li a:hover {
   height: 550px;
   text-align: center;
 }
-.services li h3 {
+#services li h3 {
   font-size: 24px;
   font-weight: 400;
   padding: 5px 0 10px 0;
 }
-.services li p {
+#services li p {
   font-size: 13px;
 }
 /* --------------- end services style --------------- */
 /* --------------- portfolio style --------------- */
-.portfolio {
+#portfolio {
   background-color: #ff5959;
   height: 900px;
 }
-.portfolio h1 {
+#portfolio h1 {
   background: url(../img/portfolio/hl.png) no-repeat center bottom;
   color: white;
 }
-.portfolio ul {
+#portfolio ul {
   margin: 0;
   padding: 0;
 }
-.portfolio ul li {
+#portfolio ul li {
   position: relative;
   list-style-type: none;
 }
-.portfolio ul li:hover .hover {
-  display: block;
+#portfolio ul li:hover .hover {
+  opacity: 1;
 }
-.portfolio .hover {
-  display: none;
+#portfolio .hover {
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -322,84 +322,85 @@ header li a:hover {
   font-weight: bold;
   font-size: 24px;
   color: white;
+  transition: 1.5s all;
 }
-.portfolio .hover h3 {
+#portfolio .hover h3 {
   margin-top: 120px;
 }
-.portfolio .hover img {
+#portfolio .hover img {
   padding: 5px;
   margin-top: 5px;
 }
-.portfolio .top {
+#portfolio .top {
   margin-top: 50px;
 }
-.portfolio .top #portfolio-img1 {
+#portfolio .top #portfolio-img1 {
   float: left;
 }
-.portfolio .top #portfolio-img2 {
+#portfolio .top #portfolio-img2 {
   float: right;
 }
-.portfolio .bottom .bottom-imgs-portfolio {
+#portfolio .bottom .bottom-imgs-portfolio {
   margin-top: 65px;
   display: inline-block;
   padding-right: 25px;
 }
-.portfolio .bottom .bottom-imgs-portfolio:nth-child(3) {
+#portfolio .bottom .bottom-imgs-portfolio:nth-child(3) {
   padding-right: 0;
 }
-.portfolio .bottom .bottom-imgs-portfolio:last-child {
+#portfolio .bottom .bottom-imgs-portfolio:last-child {
   padding-right: 0;
   padding-left: 21px;
 }
 /* --------------- end portfolio style --------------- */
 /* --------------- team style --------------- */
-.team {
+#team {
   height: 705px;
   background-color: #e8e8e8;
 }
-.team h1 {
+#team h1 {
   background: url(../img/wond_team/hl.png) no-repeat center bottom;
 }
-.team .team-face {
+#team .team-face {
   width: 270px;
   margin-right: 25px;
   text-align: center;
 }
-.team .team-face:nth-child(3) {
+#team .team-face:nth-child(3) {
   margin-right: 21px;
 }
-.team .team-face:last-child {
+#team .team-face:last-child {
   margin: 0;
 }
-.team .team-face .name {
+#team .team-face .name {
   margin: 10px 0 0 0;
   display: block;
   font-size: 24px;
   font-weight: bold;
 }
-.team .team-face .profession {
+#team .team-face .profession {
   font-weight: 400;
 }
-.team .team-face p {
+#team .team-face p {
   margin-top: 15px;
   font-size: 14px;
   font-weight: 300;
 }
-.team .team-face img {
+#team .team-face img {
   padding: 5px;
 }
-.team .team-list {
+#team .team-list {
   margin-top: 50px;
 }
-.team ul {
+#team ul {
   margin: 0;
   padding: 0;
 }
-.team ul li {
+#team ul li {
   display: inline-block;
   list-style-type: none;
 }
-.team .one-face-team {
+#team .one-face-team {
   width: 270px;
   height: 270px;
   border: 2px solid #ff5959;
@@ -407,15 +408,15 @@ header li a:hover {
 }
 /* --------------- end team style --------------- */
 /* --------------- news style --------------- */
-.news {
+#news {
   background-color: #ff5959;
   height: 730px;
 }
-.news h1 {
+#news h1 {
   color: white;
   background: url(../img/latest_news/hl.png) no-repeat center bottom;
 }
-.news .news-item {
+#news .news-item {
   box-sizing: content-box;
   float: left;
   width: 370px;
@@ -424,47 +425,48 @@ header li a:hover {
   margin-top: 60px;
   padding-right: 7px;
 }
-.news .news-item h3 {
+#news .news-item h3 > a {
+  display: inline-block;
   font-size: 18px;
   font-weight: bold;
   padding: 15px 0 10px 0;
 }
-.news .news-item .date-news img {
+#news .news-item .date-news img {
   padding-right: 10px;
 }
-.news .news-item p {
+#news .news-item p {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 13px;
 }
-.news .news-item a {
+#news .news-item a {
   color: white;
   text-decoration: none;
   font-size: 13px;
   margin-right: 35px;
 }
-.news .news-item a:hover {
+#news .news-item a:hover {
   text-decoration: underline;
 }
-.news .news-item a img {
+#news .news-item a img {
   padding-right: 15px;
 }
 /* --------------- end news style --------------- */
 /* --------------- contact style --------------- */
-.contact {
+#contact {
   background-color: #e8e8e8;
   height: 550px;
 }
-.contact h1 {
+#contact h1 {
   background: url(../img/contact/hl.png) no-repeat center bottom;
   margin-bottom: 60px;
 }
-.contact .contact-form {
+#contact .contact-form {
   float: left;
   width: 570px;
 }
-.contact .contact-form input,
-.contact .contact-form textarea {
+#contact .contact-form input,
+#contact .contact-form textarea {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
@@ -472,42 +474,42 @@ header li a:hover {
   margin-bottom: 15px;
   font-size: 14px;
 }
-.contact .contact-form input:focus,
-.contact .contact-form textarea:focus {
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
   border: 1px solid #ff5959;
   outline: none;
 }
-.contact .contact-form textarea {
+#contact .contact-form textarea {
   resize: vertical;
   max-height: 170px;
 }
-.contact .contact-info {
+#contact .contact-info {
   float: right;
   width: 570px;
 }
-.contact .contact-info h2 {
+#contact .contact-info h2 {
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 15px;
 }
-.contact .contact-info p {
+#contact .contact-info p {
   font-size: 13px;
 }
-.contact .contact-info .maps,
-.contact .contact-info .phone {
+#contact .contact-info .maps,
+#contact .contact-info .phone {
   display: block;
   font-size: 14px;
   margin: 15px 0;
   font-weight: bold;
 }
-.contact .contact-info .maps img,
-.contact .contact-info .phone img {
+#contact .contact-info .maps img,
+#contact .contact-info .phone img {
   padding-right: 10px;
 }
-.contact .contact-info .maps {
+#contact .contact-info .maps {
   position: relative;
 }
-.contact .contact-info .maps a::after {
+#contact .contact-info .maps a::after {
   content: '';
   position: absolute;
   top: 5px;
@@ -515,19 +517,19 @@ header li a:hover {
   background: url(../img/contact/Arrow.png) no-repeat;
   margin-left: 5px;
 }
-.contact .contact-info a {
+#contact .contact-info a {
   text-decoration: none;
   color: black;
 }
-.contact .contact-info ul {
+#contact .contact-info ul {
   margin: 50px 0 0 0;
   padding: 0;
 }
-.contact .contact-info ul li {
+#contact .contact-info ul li {
   list-style-type: none;
   display: inline-block;
 }
-.contact .contact-info ul li a {
+#contact .contact-info ul li a {
   font-family: "Droid Sans", Arial, sans-serif;
   display: inline-block;
   text-align: center;
@@ -541,7 +543,7 @@ header li a:hover {
   color: white;
   background-color: #ff5959;
 }
-.contact .contact-info ul li a:hover {
+#contact .contact-info ul li a:hover {
   color: #ff5959;
   background-color: white;
 }
@@ -623,6 +625,7 @@ footer span {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-#pager li:hover {
+#pager li:hover,
+#pager li.active {
   background-color: rgba(255, 255, 255, 0.8);
 }
