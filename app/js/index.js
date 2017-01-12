@@ -3,8 +3,7 @@ window.addEventListener('load', function() {
         divItems,
         imageNumber,
         imageWidth,
-        prev,
-        next;
+        prev, next;
     var currentPosition = 0;
     var currentImage = 0;
 
@@ -16,7 +15,7 @@ window.addEventListener('load', function() {
         newsWrapper.style.width = parseInt(imageWidth * imageNumber) + 'px';
         prev = document.getElementById("prev");
         next = document.getElementById("next");
-        generatePager(imageNumber);
+        generateDots(imageNumber);
         prev.onclick = function () {
             onClickPrev();
         };
@@ -61,37 +60,54 @@ window.addEventListener('load', function() {
         };
         animate(opts);
     }
-
-    function onClickPrev() {
-        if (currentImage == 0) {
-            slideTo(imageNumber - 3);
+    function activeDot(q) {
+        var remLi = document.getElementsByClassName('dot');
+        for(var j = 0; j < imageNumber/3; j++){
+            remLi[j].classList.remove('active');
         }
-        else {
-            slideTo(currentImage - 3);
-        }
+        remLi[q].classList.add('active');
     }
     function onClickNext() {
         if (currentImage == imageNumber - 3) {
             slideTo(0);
+            activeDot(0);
         }
         else {
             slideTo(currentImage + 3);
+            activeDot((currentImage + 3)/3);
         }
     }
 
-    function generatePager(imageNumber) {
+    function onClickPrev() {
+        if (currentImage == 0) {
+            slideTo(imageNumber - 3);
+            activeDot((imageNumber - 3)/3);
+        }
+        else {
+            slideTo(currentImage - 3);
+            activeDot((currentImage - 3)/3);
+        }
+    }
+
+    function generateDots(imageNumber) {
         var i;
         var pagerDiv = document.getElementById('pager');
-        for (i = 0; i < imageNumber; i++) {
+        for (i = 0; i < imageNumber; i = i + 3) {
             var li = document.createElement('li');
+            li.className = "dot";
             pagerDiv.appendChild(li);
-            // add event inside a loop, closure issue.
             li.onclick = function (i) {
                 return function () {
                     slideTo(i);
+                    var remLi = document.getElementsByClassName('dot');
+                    for(var j = 0; j < imageNumber/3; j++){
+                        remLi[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
                 }
             }(i);
         }
+        pagerDiv.firstElementChild.classList.add('active');
     }
     init();
 });
